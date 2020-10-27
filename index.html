@@ -16,7 +16,6 @@
       height: 400px;
     }
   </style>
-  <script defer src="canvas.js"></script>
 </head>
 
 <body>
@@ -27,4 +26,33 @@
   <div>
     <button id="clear">erase board</button>
   </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyDklHuNplrHiCmxh4OauFvQKGQc2DH3bK4",
+      authDomain: "next-canvas-test.firebaseapp.com",
+      databaseURL: "https://next-canvas-test.firebaseio.com",
+      projectId: "next-canvas-test",
+      storageBucket: "next-canvas-test.appspot.com",
+      messagingSenderId: "289151535277",
+      appId: "1:289151535277:web:b9c3688d5d119ed1a1de24",
+      measurementId: "G-S5G0NP24NF"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+  <script src="canvas.js"></script>
+  <script src="network.js"></script>
 </body>
