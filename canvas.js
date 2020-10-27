@@ -15,13 +15,14 @@ function getPoint(event) {
 function canvasToData(canvas) {
   let ctx = canvas.getContext('2d');
   let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  let arr = imageData.data;
-  let jsonData = JSON.stringify(arr);
+  let buffer = imageData.data.buffer;
+  let jsonData = JSON.stringify(buffer);
   return jsonData;
 }
 function dataToCanvas(canvas, jsonData) {
-  let arr = JSON.parse(jsonData);
-  let imageData = new ImageData(arr);
+  let buffer = JSON.parse(jsonData);
+  let imageData = new ImageData(600, 400);
+  imageData.data.set(buffer);
   let ctx = canvas.getContext('2d');
   ctx.putImageData(imageData, 0, 0);
 }
@@ -49,6 +50,9 @@ myCanvas.addEventListener('mousemove', (event) => {
       ctx.lineTo(currPoint.x, currPoint.y);
       ctx.closePath();
       ctx.stroke();
+
+      // test
+      updateRemoteCanvas('remote', canvasToData(myCanvas));
     }
     lastPoint = currPoint;
   }
@@ -66,10 +70,10 @@ function updateRemoteCanvas(id, jsonData) {
   let canvas = otherCanvases[id];
   if (!canvas) {
     canvas = document.createElement('canvas');
-    canvas.width = 300;
-    canvas.height = 200;
+    canvas.width = 600;
+    canvas.height = 400;
     document.body.appendChild(canvas);
     otherCanvases[id] = canvas;
   }
-  putImageData(canvas, jsonData);
+  dataToCanvas(canvas, jsonData);
 }

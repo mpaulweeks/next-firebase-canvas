@@ -5,6 +5,8 @@ let myRef = firebase.database().ref('user/' + myId);
 myRef.onDisconnect().remove();
 
 setInterval(() => {
+  //todo
+  return;
   myRef.set({
     id: myId,
     data: canvasToData(myCanvas),
