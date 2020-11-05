@@ -74,3 +74,9 @@ function updateRemoteCanvas(id, data) {
   }
   dataToCanvas(canvas, data);
 }
+function removeRemoteCanvas(id) {
+  let canvas = otherCanvases[id];
+  if (canvas) {
+    canvas.remove();
+  }
+}
