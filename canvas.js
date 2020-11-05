@@ -52,8 +52,8 @@ class DrawingBoard {
   setupErase() {
     // listen for erase button
     document.getElementById('clear').addEventListener('click', () => {
-      ctx.fillStyle = 'white';
-      ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.fillStyle = 'white';
+      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     });
   }
 
