@@ -13,7 +13,7 @@ setInterval(() => {
 
 // read all other canvases once on pageload
 userRef.once('value', (snapshot) => {
-  let updates = Object.values(snapshot.val());
+  let updates = Object.values(snapshot.val() || {});
   updates.forEach((update) => {
     manager.updateRemoteDisplay(update);
   });
