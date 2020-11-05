@@ -15,20 +15,20 @@ setInterval(() => {
 userRef.once('value', (snapshot) => {
   let updates = Object.values(snapshot.val());
   updates.forEach((update) => {
-    manager.updateRemoteCanvas(update);
+    manager.updateRemoteDisplay(update);
   });
 });
 
 // read when canvases are added/edited/removed
 userRef.on('child_added', (snapshot) => {
   let update = snapshot.val();
-  manager.updateRemoteCanvas(update);
+  manager.updateRemoteDisplay(update);
 });
 userRef.on('child_changed', (snapshot) => {
   let update = snapshot.val();
-  manager.updateRemoteCanvas(update);
+  manager.updateRemoteDisplay(update);
 });
 userRef.on('child_removed', (snapshot) => {
   let update = snapshot.val();
-  manager.removeRemoteCanvas(update);
+  manager.removeRemoteDisplay(update);
 });

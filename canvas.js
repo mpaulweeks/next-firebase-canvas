@@ -62,46 +62,60 @@ class DrawingBoard {
   }
 }
 
-class CanvasManager {
-  constructor() {
-    this.myId = Math.floor(Math.random() * 1000000);
-    this.myCanvas = new DrawingBoard();
-    this.otherCanvases = {};
+class RemoteDisplay {
+  constructor(id) {
+    this.id = id;
+    this.canvas = document.createElement('canvas');
+    this.canvas.width = 600;
+    this.canvas.height = 400;
+    document.body.appendChild(this.canvas);
   }
-  getMyData() {
-    return {
-      id: this.myId,
-      image: this.myCanvas.toImageData(),
-    }
-  }
-  updateRemoteCanvas(data) {
-    let { id, image } = data;
-    if (id === this.myId) {
-      return;
-    }
-    let canvas = this.otherCanvases[id];
-    if (!canvas) {
-      canvas = document.createElement('canvas');
-      canvas.width = 600;
-      canvas.height = 400;
-      document.body.appendChild(canvas);
-      this.otherCanvases[id] = canvas;
-    }
-    let ctx = canvas.getContext('2d');
+  update(image) {
+    let ctx = this.canvas.getContext('2d');
     let imgObj = new Image();
     imgObj.onload = () => {
       ctx.drawImage(imgObj, 0, 0);
     };
     imgObj.src = image;
   }
-  removeRemoteCanvas(data) {
+  remove() {
+    this.canvas.remove();
+  }
+}
+
+class CanvasManager {
+  constructor() {
+    this.myId = Math.floor(Math.random() * 1000000);
+    this.drawingBoard = new DrawingBoard();
+    this.remoteDisplays = {};
+  }
+  getMyData() {
+    return {
+      id: this.myId,
+      image: this.drawingBoard.toImageData(),
+    }
+  }
+  updateRemoteDisplay(data) {
+    let { id, image } = data;
+    if (id === this.myId) {
+      return;
+    }
+    let display = this.remoteDisplays[id];
+    if (!display) {
+      display = new RemoteDisplay(id);
+      this.remoteDisplays[id] = display;
+    }
+    display.update(image);
+  }
+  removeRemoteDisplay(data) {
     let { id } = data;
     if (id === this.myId) {
       return;
     }
-    let canvas = this.otherCanvases[id];
-    if (canvas) {
-      canvas.remove();
+    let display = this.remoteDisplays[id];
+    if (display) {
+      display.remove();
+      this.remoteDisplays[id] = undefined;
     }
   }
 }
