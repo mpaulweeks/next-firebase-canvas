@@ -6,9 +6,19 @@
       margin: 10px;
       text-align: center;
     }
+
+    #prompt {
+      color: blue;
+    }
+
+    #timer {
+      color: red;
+    }
+
     hr {
       margin: 1em 5em;
     }
+
     canvas {
       margin: 1em;
       border: 2px solid black;
@@ -26,14 +36,17 @@
 </head>
 
 <body>
+  <h1>
+    Draw a <span id="prompt">???</span> in the next <span id="timer">???</span> seconds!
+  </h1>
   <div>
     <canvas id="my-canvas"></canvas>
   </div>
-  <br/>
+  <br />
   <div>
     <button id="clear">erase board</button>
   </div>
-  <hr/>
+  <hr />
 
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
@@ -61,6 +74,7 @@
     firebase.analytics();
   </script>
 
+  <script src="prompt.js"></script>
   <script src="canvas.js"></script>
   <script src="network.js"></script>
 </body>
