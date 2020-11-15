@@ -1,7 +1,5 @@
 let manager = new CanvasManager();
 
-// todo students do everything below
-
 let myRef = firebase.database().ref('user/' + manager.myId);
 let userRef = firebase.database().ref('user');
 
