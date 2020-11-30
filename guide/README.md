@@ -8,22 +8,22 @@
 
 ## Create firebase webapp to get access code
 
-![](pic1h.png)
+<img width="400" height="auto" src="pic1h.png" />
 
 - Click `<>` to setup for web, say NO to hosting
 
-![](pic2h.png)
+<img width="400" height="auto" src="pic2h.png" />
 
 - The name here doesn't matter. Make it different from your firebase name just to avoid confusion.
 
-![](pic3h.png)
+<img width="400" height="auto" src="pic3h.png" />
 
 - Copy the entire blurb into your code! `index.html`, right above the script tags
 - Still in your code, copy/paste analytics import and replace `firebase-analytics` with `firebase-database`
 
 ## Create firebase realtime database for storing our data
 
-![](pic4h.png)
+<img width="400" height="auto" src="pic4h.png" />
 
 - Use right bar to select Realtime Database
 - Click `Create Database` button
