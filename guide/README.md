@@ -3,7 +3,8 @@
     text-align: center;
   }
   img {
-    border: 10px solid black;
+    border: 5px solid grey;
+    padding: 5px;
     width: 600px;
     height: auto;
   }
