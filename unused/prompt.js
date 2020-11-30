@@ -1,4 +1,12 @@
 
+/* html
+
+  <h1>
+    Draw a <span id="prompt">???</span> in the next <span id="timer">???</span> seconds!
+  </h1>
+
+*/
+
 const allPrompts = [
   'Dog',
   'Cat',
@@ -7,7 +15,7 @@ const allPrompts = [
 
 async function startClock() {
   const localStart = new Date();
-  const resp = await fetch("http://worldtimeapi.org/api/ip");
+  const resp = await fetch("https://worldtimeapi.org/api/ip");
   const data = await resp.json();
   const { utc_datetime } = data;
   const trueStart = new Date(utc_datetime);

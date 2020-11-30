@@ -1,0 +1,1 @@
+let manager = new CanvasManager();

@@ -1,5 +1,7 @@
 let manager = new CanvasManager();
 
+// todo students do everything below
+
 let myRef = firebase.database().ref('user/' + manager.myId);
 let userRef = firebase.database().ref('user');
 
@@ -22,13 +24,19 @@ userRef.once('value', (snapshot) => {
 // read when canvases are added/edited/removed
 userRef.on('child_added', (snapshot) => {
   let update = snapshot.val();
-  manager.updateRemoteDisplay(update);
+  if (update.id !== manager.myId) {
+    manager.updateRemoteDisplay(update);
+  }
 });
 userRef.on('child_changed', (snapshot) => {
   let update = snapshot.val();
-  manager.updateRemoteDisplay(update);
+  if (update.id !== manager.myId) {
+    manager.updateRemoteDisplay(update);
+  }
 });
 userRef.on('child_removed', (snapshot) => {
   let update = snapshot.val();
-  manager.removeRemoteDisplay(update);
+  if (update.id !== manager.myId) {
+    manager.removeRemoteDisplay(update);
+  }
 });

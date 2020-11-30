@@ -16,7 +16,7 @@ class DrawingBoard {
     let rect = event.target.getBoundingClientRect();
     let x = event.clientX - rect.left; // x position within the element
     let y = event.clientY - rect.top;  // y position within the element
-    return {x, y};
+    return { x, y };
   }
 
   setupMouse() {
@@ -97,9 +97,6 @@ class CanvasManager {
   }
   updateRemoteDisplay(data) {
     let { id, image } = data;
-    if (id === this.myId) {
-      return;
-    }
     let display = this.remoteDisplays[id];
     if (!display) {
       display = new RemoteDisplay(id);
@@ -109,9 +106,6 @@ class CanvasManager {
   }
   removeRemoteDisplay(data) {
     let { id } = data;
-    if (id === this.myId) {
-      return;
-    }
     let display = this.remoteDisplays[id];
     if (display) {
       display.remove();
