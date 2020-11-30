@@ -1,15 +1,3 @@
-<style>
-  p {
-    text-align: center;
-  }
-  img {
-    border: 5px solid grey;
-    padding: 5px;
-    width: 600px;
-    height: auto;
-  }
-</style>
-
 # Seting up Firebase
 
 - Entry point: https://console.firebase.google.com/
@@ -20,19 +8,19 @@
 
 ## Create firebase webapp to get access code
 
-<p>
+<p class="imagerow">
   <img src="pic1h.png" />
 </p>
 
 - Click `<>` to setup for web, say NO to hosting
 
-<p>
+<p class="imagerow">
   <img src="pic2h.png" />
 </p>
 
 - The name here doesn't matter. Make it different from your firebase name just to avoid confusion.
 
-<p>
+<p class="imagerow">
   <img src="pic3h.png" />
 </p>
 
@@ -41,10 +29,22 @@
 
 ## Create firebase realtime database for storing our data
 
-<p>
+<p class="imagerow">
   <img src="pic4h.png" />
 </p>
 
 - Use right bar to select Realtime Database
 - Click `Create Database` button
 - Start in `test mode` and then enable!
+
+<style>
+  p.imagerow {
+    text-align: center;
+  }
+  img {
+    border: 5px solid grey;
+    padding: 5px;
+    width: 600px;
+    height: auto;
+  }
+</style>
