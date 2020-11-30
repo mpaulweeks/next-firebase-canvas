@@ -2,7 +2,7 @@
 
 Code Next Workshop based around HTML5 canvas + Google Firebase
 
-- Starting: https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas
-- Solution: https://mpaulweeks.github.io/next-firebase-canvas/solution/
-- Download: https://mpaulweeks.github.io/next-firebase-canvas/starter.zip
-- Guide: https://mpaulweeks.github.io/next-firebase-canvas/guide
+- [Demo Starting Code](https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas)
+- [Demo Solution](https://mpaulweeks.github.io/next-firebase-canvas/solution/)
+- [Download Starting Code (zip)](https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas.zip)
+- [Guide to Firebase Setup](https://mpaulweeks.github.io/next-firebase-canvas/guide)
