@@ -3,8 +3,9 @@
 Code Next Workshop based around HTML5 canvas + Google Firebase
 
 - [Demo Starting Code](https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas)
-- [Demo Solution](https://mpaulweeks.github.io/next-firebase-canvas/solution/)
+- [Demo Finished Version](https://mpaulweeks.github.io/next-firebase-canvas/solution/)
 - [Download Starting Code (zip)](https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas.zip)
+- [Download Finished Workshop Code (zip)](https://mpaulweeks.github.io/next-firebase-canvas/next-firebase-canvas-inclass.zip)
 - [Guide to Firebase Setup](https://mpaulweeks.github.io/next-firebase-canvas/guide)
 
 <p class="imagerow">
